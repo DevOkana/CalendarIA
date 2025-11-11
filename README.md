@@ -1,7 +1,32 @@
 # 📅 Planner — IA + Google Calendar
 
-**CalendarIA** es una herramienta automatizada que genera planes de estudio y trabajo en formato iCalendar (.ics) usando la API de **Gemini**, y los sincroniza automáticamente con **Google Calendar**.  
-Incluye un comando auxiliar para borrar (purga) eventos antiguos o filtrados por prefijo.
+**CalendarIA** es una herramienta que combina inteligencia artificial (IA Gemini) y automatización para generar planes de estudio y trabajo, exportables como .ics y sincronizables con Google Calendar.
+## 📖 Índice
+
+1. [✨ Funcionalidades principales](#-funcionalidades-principales)  
+2. [🧰 Requisitos previos](#-requisitos-previos)  
+3. [⚙️ Instalación](#️-instalación)  
+   - [Clonar el repositorio](#1️⃣-clonar-el-repositorio)  
+   - [Crear entorno virtual](#2️⃣-crear-entorno-virtual)  
+   - [Instalar dependencias](#3️⃣-instalar-dependencias)  
+   - [Copiar variables de entorno](#4️⃣-copiar-variables-de-entorno)  
+4. [🔑 Configuración de Google Calendar API](#-configuración-de-google-calendar-api)  
+   - [A) Crear el proyecto](#a-crear-el-proyecto)  
+   - [B) Habilitar la API](#b-habilitar-la-api)  
+   - [C) Pantalla de consentimiento OAuth](#c-pantalla-de-consentimiento-oauth)  
+   - [D) Crear credenciales OAuth](#d-crear-credenciales-oauth-después-de-crear-te-aparecería-esta-pantalla)  
+   - [🪙 Generación automática del token.pickle](#-generación-automática-del-tokenpickle)  
+5. [🤖 Obtener el token de la API de Gemini](#-obtener-el-token-de-la-api-de-gemini)  
+6. [🧭 Configuración de ejemplo](#-configuración-de-ejemplo)  
+   - [🗓️ Horario semanal y trabajo](#️-horario-de-semanal-y-trabajo)  
+   - [🔃 Subcalendarios (calendarsyaml)](#-definición-de-el-id-de-los-subcalendarios-google-por-defecto-el-calendario-principal-es-primary)  
+   - [⚙️ Configuración general (settingstoml)](#configuración-de-hora-y-modelo-de-gemini)  
+7. [▶️ Uso](#️-uso)  
+8. [🧹 Comando auxiliar: Purga de eventos](#-comando-auxiliar-purga-de-eventos)  
+9. [⚠️ Problemas comunes](#️-problemas-comunes)  
+10. [📜 Licencia](#-licencia-)  
+11. [💬 Créditos](#-créditos)
+
 
 ---
 
@@ -131,7 +156,12 @@ Después se generará automáticamente `secrets/token.pickle`.
 Recuerda renombrar y editar los archivos en `config/` según tus necesidades.
 Hay dos archivos que incluyo el ejemplo mínimo para que funcione. Pero antes hay que renombrar
 quitandole el `.example` al final.
+## 🧠 Prompt de IA (editable)
 
+El plan lo genera un **prompt** que puedes modificar libremente.  
+- Archivo por defecto: [`prompts/prompt_es.txt`](prompts/prompt_es.txt)  
+- Idioma: libre (el ejemplo está en español).  
+- **Nota:** el prompt incluido es **solo un ejemplo**; adáptalo a tu estilo y reglas.
 
 ## 🗓️ Horario de Semanal y Trabajo
 En este apartado vas a definir el inicio de la semana y el final hasta donde quieres que 
@@ -280,7 +310,8 @@ python src/CalendarIA/cli.py purge --since 2025-11-04 \
 ---
 
 
-## 📜 Licencia
+## 📜 Licencia [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 **MIT License © 2025**
 Puedes modificar, distribuir y usar libremente siempre que mantengas la atribución original.
@@ -292,3 +323,8 @@ Puedes modificar, distribuir y usar libremente siempre que mantengas la atribuci
 Desarrollado con 💡 por Okana
 Inspirado en los sistemas de planificación de la UNED y en la integración local con Gemini + Google Calendar.
 ¡Gracias por usar CalendarIA! 🚀
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
+![Google Calendar API](https://img.shields.io/badge/Google%20Calendar-API-orange)
+![Gemini AI](https://img.shields.io/badge/Gemini%20AI-Integration-purple)
