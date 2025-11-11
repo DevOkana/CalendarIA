@@ -1,0 +1,12 @@
+/calendars.yaml
+/.env
+/token.pickle
+/secrets/token.pickle
+/config/calendars.yaml
+/.idea
+/prompts/prompt_es.txt
+/secrets
+/config/schedule.yaml
+/*.ics
+/plan_example*
+__pycache__

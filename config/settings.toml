@@ -1,0 +1,17 @@
+[calendar]
+name = "Plan UNED — Semana" # Name of the calendar
+timezone = "Europe/Madrid" # Timezone of the calendar
+lenguaje = "es" # Language for the calendar (e.g., "es" for Spanish, "en" for English)
+
+# Other model options IA
+#gemini-2.5-flash
+#gemini-2.5-flash-lite
+#gemini-2.5-pro
+#More info https://ai.google.dev/gemini-api/docs?hl=es-419
+[model]
+name = "gemini-2.5-pro" # Name of the AI model to use
+
+[output]
+base_name = "plan_example"  # Base name for output files
+json = "plan_example.json" # Output JSON file name
+ics = "plan_example.ics"  # Output ICS file name
