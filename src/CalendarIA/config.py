@@ -27,7 +27,10 @@ class Settings:
     @staticmethod
     def _read_yaml(p: Path) -> Dict[str, Any]:
         with open(p, "r", encoding="utf-8") as fh:
-            return yaml.safe_load(fh) or {}
+            try:
+                return yaml.safe_load(fh) or {}
+            except yaml.parser.ParserError as e:
+                raise ValueError(f"Error en el parseo del archivo YAML {p}: {e}. Por favor de revisar")
 
     @staticmethod
     def _read_toml(p: Path) -> Dict[str, Any]:

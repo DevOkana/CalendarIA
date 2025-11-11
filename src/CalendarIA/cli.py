@@ -58,6 +58,7 @@ def main():
 
     if args.command in ("generate-json", "plan"):
         prompt_text = render_prompt(Path(args.prompt), semana_inicio, semana_final, trabajo)
+        #print(prompt_text)
         client = GeminiClient(conf.google_api_key, conf.settings["model"]["name"])
         json_out.write_text(client.generate_json(prompt_text), encoding="utf-8")
         print(f"✅ JSON generado: {json_out}")

@@ -22,13 +22,13 @@ Eres un planificador profesional que vas a gestionar el horario de una persona c
   ]
 }}
 
-DATOS CONCRETOS DE LA SEMANA ({semana_inicio} a {semana_final})
+DATOS CONCRETOS DE LA SEMANA ({SEMANA_INICIO} a {SEMANA_FINAL})
 - Zona horaria: Europe/Madrid
 - Turnos de TRABAJO:
-{bloque_trabajo}
+{BLOQUE_TRABAJO}
 
 REGLAS GENERALES
-- Planifica SOLO la semana del {semana_inicio} al {semana_final} (ambos inclusive).
+- Planifica SOLO la semana del {SEMANA_INICIO} al {SEMANA_FINAL} (ambos inclusive).
 - Descanso nocturno:
   * Días CON trabajo al día siguiente: "Descanso" 00:00–08:00
   * Días SIN trabajo al día siguiente: "Descanso" 00:00–09:00
@@ -104,7 +104,7 @@ ORDEN PREFERENTE (si hay trabajo ese día)
 4) Si hoy trabajo y el día que sigue no, adapta el descanso nocturno a 09:00.
 
 VALORES POR DEFECTO
-- "calendar.name": "Plan UNED — Semana 04–10 Nov 2025"
+- "calendar.name": "Plan Semanal"
 - "calendar.timezone": "Europe/Madrid"
 - "calendar.prodid": "-//UNED Planner//GenAI//ES"
 
