@@ -31,7 +31,7 @@ Incluye un comando auxiliar para borrar (purga) eventos antiguos o filtrados por
 ### 1️⃣ Clonar el repositorio
 
 ```bash
-git clone https://github.com/<tu_usuario>/CalendarIA.git
+git clone https://github.com/DevOkana/CalendarIA.git
 cd CalendarIA
 ```
 
@@ -96,20 +96,6 @@ Edita .env con tus valores:
    ```
 5. Finalmente, en el apartado **“Publicar”**, haz público el proyecto, o el acceso podría estar bloqueado al iniciar sesión.
 6. Al ejecutarse localmente, es normal que el navegador advierta sobre el certificado. Acepta continuar.
-
-👉 En el primer uso se abrirá una ventana del navegador para autorizar tu cuenta.
-Después se generará automáticamente `secrets/token.pickle`.
----
-## 🤖 Obtener el token de la API de Gemini
-1. Entra en [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey).  
-2. Inicia sesión con tu cuenta de Google.  
-3. Pulsa **“Create API key”** → selecciona *“Personal project”*.  
-4. Copia la clave generada y añádela en tu archivo `.env`:
-
-```
-  GOOGLE_API_KEY = TU_API_KEY_DE_GEMINI
-```
----
 ### 🪙 Generación automática del `token.pickle`
 
 El archivo `token.pickle` **no se descarga ni se crea manualmente**.  
@@ -124,6 +110,20 @@ Durante la primera ejecución:
 ```
 Ese archivo almacena el **token de autenticación** para que no tengas que volver a iniciar sesión.  
 Si lo eliminas, el programa volverá a pedir autorización en el siguiente uso.
+
+👉 En el primer uso se abrirá una ventana del navegador para autorizar tu cuenta.
+Después se generará automáticamente `secrets/token.pickle`.
+---
+## 🤖 Obtener el token de la API de Gemini
+1. Entra en [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey).  
+2. Inicia sesión con tu cuenta de Google.  
+3. Pulsa **“Create API key”** → selecciona *“Personal project”*.  
+4. Copia la clave generada y añádela en tu archivo `.env`:
+
+```
+  GOOGLE_API_KEY = TU_API_KEY_DE_GEMINI
+```
+---
 
 ---
 
