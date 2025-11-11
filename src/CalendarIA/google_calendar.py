@@ -51,14 +51,38 @@ def import_ics_to_google(ics_path: Path, calendars: Dict[str, str], timezone: st
             "end":   {"dateTime": dt_end.isoformat(),   "timeZone": timezone},
         }
 
+        def _infer_cal_key(summary: str) -> str:
+            t = (summary or "").lower()
+            if "estudio" in t or "📚" in t:
+                return "ESTUDIOS"
+            if "trabajo" in t or "💼" in t:
+                return "TRABAJO"
+            if "rutina" in t or "🌀" in t:
+                return "RUTINAS"
+            if "mejora" in t or "⚙️" in t:
+                return "MEJORA"
+            return "DEFAULT"
         target_cal_id = pick_calendar_id(summary, calendars)
+
+
         if not target_cal_id or target_cal_id.strip() == "":
             target_cal_id = "primary"
         attempt = 0
         while True:
             try:
+                # === solo para el print ===
+                cal_key = _infer_cal_key(summary)
+                mapped_id = (calendars or {}).get(cal_key, "")
+                fell_to_primary = (not mapped_id or not str(mapped_id).strip())
+                # si no inferimos nada y estás en primary: muestra PRIMARY
+                display_key = (
+                    f"{cal_key}{'→PRIMARY' if fell_to_primary else ''}"
+                    if cal_key else ("PRIMARY" if target_cal_id == "primary" else "DESCONOCIDO")
+                )
+                # ==========================
+
                 service.events().insert(calendarId=target_cal_id, body=body).execute()
-                print(f"   ✔️ [{target_cal_id}] {summary}")
+                print(f"   ✔️ [{display_key}] {summary}")
                 break
             except HttpError as e:
                 status = getattr(e, "status_code", None) or (e.resp.status if hasattr(e, "resp") else None)
