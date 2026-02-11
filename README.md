@@ -1,5 +1,14 @@
 # 📅 Planner — IA + Google Calendar
 
+## 🎥 Demo rápida
+
+<p align="center">
+  <a href="https://youtu.be/6F2f68ywMzI">
+    <img src="docs/calendarIA-thumb.png" width="700">
+  </a>
+</p>
+
+
 **CalendarIA** es una herramienta que combina inteligencia artificial (IA Gemini) y automatización para generar planes de estudio y trabajo, exportables como .ics y sincronizables con Google Calendar.
 ## 📖 Índice
 
